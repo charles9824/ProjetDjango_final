@@ -1,0 +1,372 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Acceuil</title>
+{% endblock %}
+
+
+
+    <!-- end header section -->
+    <!-- slider section -->
+{% block slider %}
+    <section class="slider_section ">
+      <div class="slider_bg_box">
+        <img src=" {% static 'images/slider-bg.jpg' %}" alt="">
+      </div>
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                      Nous Offrons le Meilleur<br>
+                      Service de Transport
+                    </h1>
+                    <p>
+                      Chez ROYAL TOURS, nous nous engageons à fournir un service de transport de la plus haute qualité.
+                      Notre équipe dévouée et nos véhicules modernes garantissent une expérience de voyage confortable,
+                      fiable et sécurisée.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'contact' %}" class="btn1">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                        Pourquoi Choisir Notre Service ?
+                    </h1>
+                    <p>
+                     Fiabilité : Nous sommes ponctuels et respectons toujours les horaires convenus.<br>
+                     Confort : Nos véhicules sont équipés pour vous offrir un maximum de confort,
+                      quel que soit votre trajet.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'contact' %}" class="btn1">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-7 ">
+                  <div class="detail-box">
+                    <h1>
+                        Réservez Votre <br>
+                      Trajet Aujourd'hui
+                    </h1>
+                    <p>
+                      Contactez-nous dès maintenant pour réserver votre prochain trajet avec nous.
+                      Découvrez la différence avec ROYAL TOURS et voyagez en toute tranquillité.
+                    </p>
+                    <div class="btn-box">
+                      <a href="{% url 'contact' %}" class="btn1">
+                        Contact
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+{% endblock %}
+    <!-- end slider section -->
+
+ <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        {% block titre-entet %}
+        <div class="heading_container">
+          <h2>
+            Notre <span>Services</span>
+          </h2>
+          <p>
+           Nous offrons des services de transport pour tous vos besoins de déplacement,
+           qu'il s'agisse de trajets quotidiens, de transferts aéroport, ou de voyages de groupe.
+           Nos véhicules modernes et confortables vous garantissent une expérience agréable et sécurisée.
+          </p>
+        </div>
+        {% endblock %}
+        {% block services %}
+        {% for i in post %}
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ i.images.url }}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {{i.title}}
+                </h5>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> {{i.auteur}}</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time>{{i.date_publication}}</time></li>
+                </ul>
+              </div>
+                <p>
+                  {{i.contenu | truncatewords:100 | safe}}<a href="{% url 'read_more' i.id %}"> Lire plus</a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+          </div>
+        {% endfor %}
+        {% endblock %}
+      </div>
+    </div>
+ </section>
+
+{% block conten %}
+  <section class="about_section layout_padding-bottom">
+    <div class="container  ">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+               <h2>
+                APROPOS DE <span>ROYAL TOURS</span>
+              </h2>
+            </div>
+            <p>
+                Bienvenue chez ROYAL TOURS,
+                votre partenaire de confiance pour tous vos besoins de transport.
+                Depuis notre création,
+                nous nous engageons à offrir des services de transport fiables,
+                sûrs et confortables pour nos clients.
+                Que ce soit pour des trajets quotidiens, des transferts aéroportuaires ou des voyages de groupe,
+                nous disposons de véhicules modernes et confortables pour garantir une expérience agréable et sécurisée.
+            </p>
+            <a href="{% url 'apropos' %}">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/rt.jpg' %}" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+{% endblock %}
+  <!-- end about section -->
+
+  <!-- track section -->
+
+
+
+  <!-- end track section -->
+
+  <!-- client section -->
+
+
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+  <section class="contact_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="heading_container">
+            <h2>
+              Contact Us
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="form_container contact-form">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  SEND
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="index.html">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Home
+              </a>
+              <a class="" href="about.html">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                About
+              </a>
+              <a class="" href="service.html">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Services
+              </a>
+              <a class="" href="contact.html">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://www.google.com/maps/@19.4850137,-72.2323925,10.84z?authuser=0&entry=ttu">
+  </script>
+  <!-- End Google Map -->
+
+
+</body>
+</html>

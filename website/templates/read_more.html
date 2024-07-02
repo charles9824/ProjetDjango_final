@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block services %}
+{% for i in service %}
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{{ i.images.url }}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  {{i.title}}
+                </h5>
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> {{i.auteur}}</li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i><time>{{i.date_publication}}</time></li>
+                </ul>
+              </div>
+                <p>
+                   {{i.contenu}}
+                </p>
+
+              </div>
+            </div>
+          </div>
+          </div>
+{% endfor %}
+{% endblock %}
+
+

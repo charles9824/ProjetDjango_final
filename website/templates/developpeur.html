@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>developpeur</title>
+{% endblock %}
+{% block developpeur %}
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container ">
+        <div class="heading_container">
+          <h2>
+              <span>Developper</span>
+          </h2>
+          <p>
+            Par un groupe d'étudiants a l'université jérusalem de pignon Haiti (UJEPH)
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/jlk.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <p>
+                  Lucksony CHARLES
+                </p>
+                <p>
+                  ING. Informatiques <br> Niveau : IV <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/senat.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <p>
+                  Hermanos SENAT
+                </p>
+                <p>
+                  ING. Informatiques <br> Niveau : IV <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/titus.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <p>
+                  Olsen TITUS
+                </p>
+                <p>
+                  ING. Informatiques <br> Niveau : IV <br>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/about-img.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <p>
+                  Micheline JEAN FRANCOIS
+                </p>
+                <p>
+                  ING. Informatiques <br> Niveau : IV <br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="track_section layout_padding">
+    <div class="track_bg_box">
+      <img src="{% static 'images/track-bg.jpg' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="heading_container">
+            <h3 class="cont">
+              contacter-nous pour votre site web !
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

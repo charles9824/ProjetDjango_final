@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Reservation</title>
+{% endblock %}
+
+{% block contact %}
+
+  <!-- contact section -->
+  <section class="contact_section layout_padding-top">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="heading_container">
+            <h2>
+              Faire votre Reservation
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1">
+          <div class="form_container">
+            <form action="">
+              <div>
+                <input type="text" placeholder="Votre Nom" />
+              </div>
+              <div>
+                <input type="text" placeholder="Votre Numero de Telephone" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+                <div>
+                <input type="Date" placeholder="Date du voyage" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="btn_box">
+                <button>
+                  Envoyer
+                </button>
+              </div>
+              <br>
+            </form>
+          </div>
+          <div class="btn_box">
+            <button type="submit">
+              <a href="{% url 'acceuil' %}" class="btn1">
+                Retour
+              </a>
+            </button>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-6 px-0">
+          <div class="map_container">
+            <div class="map">
+              <div id="googleMap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+{% endblock %}

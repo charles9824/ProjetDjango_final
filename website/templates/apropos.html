@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Apropos</title>
+{% endblock %}
+
+{% block conten %}
+<!-- about section -->
+  <section class="about_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                APROPOS DE <span>ROYAL TOURS</span>
+              </h2>
+            </div>
+            <p>
+                Bienvenue chez ROYAL TOURS,
+                votre partenaire de confiance pour tous vos besoins de transport.
+                Depuis notre création,
+                nous nous engageons à offrir des services de transport fiables,
+                sûrs et confortables pour nos clients.
+                Que ce soit pour des trajets quotidiens, des transferts aéroportuaires ou des voyages de groupe,
+                nous disposons de véhicules modernes et confortables pour garantir une expérience agréable et sécurisée.
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{% static 'images/rt.jpg' %}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
