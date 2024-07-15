@@ -16,7 +16,7 @@ class Client_(admin.ModelAdmin):
 
 @admin.register(Reservations)
 class Reservation(admin.ModelAdmin):
-    list_display = ("date_reservation", "date_depart", "date_arrivee", "lieu_depart", "lieu_arrivee", "client")
+    list_display = ("date_reservation", "date_depart", "date_arrivee", "lieu_depart", "lieu_arrivee", "client", "montant_total")
     list_display_links = ("date_depart", )
     search_fields = ("numero_bus",)
     list_filter = ("date_reservation",)

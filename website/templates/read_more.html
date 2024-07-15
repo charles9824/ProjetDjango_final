@@ -3,6 +3,7 @@
 
 {% block services %}
 {% for i in service %}
+
         <div class="row">
           <div class="col-md-6 ">
             <div class="box ">
@@ -20,7 +21,7 @@
                 </ul>
               </div>
                 <p>
-                   {{i.contenu}}
+                   {{i.contenu | truncatewords:10000 | safe}}
                 </p>
 
               </div>

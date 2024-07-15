@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_currentuser.middleware.ThreadLocalUserMiddleware',
 ]
 
 ROOT_URLCONF = 'Royal_tours.urls'
@@ -139,3 +140,13 @@ EMAIL_USE_SSL = False
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CKEDITOR_CONFIGS = {
+ 'default':
+ {
+ 'toolbar': 'full',
+ 'width': 'auto',
+ 'extraPlugins': ','.join([
+ 'codesnippet',
+ ]),
+ },
+}
